@@ -2,7 +2,7 @@
 <p>An application to manage projects</p>
 
 <p><b>Still in production</b></p>
-<p>Purpose of this application will be to make api calls to database for front end</p>
+<p>Purpose of this application will be to make api calls to database for front end. Which will be implemented using React</p>
 <h2>Stack</h2>
 <h4>Backend</h4>
 <ul>
