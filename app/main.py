@@ -10,15 +10,17 @@ import time
 from . import models
 from sqlalchemy.orm import Session
 from .database import engine,get_db
-
+import os
 models.Base.metadata.create_all(bind=engine)
 app=FastAPI()
 
-
+dname = os.getenv("database_name", "")
+uname = os.getenv("uname","")
+pwwd = os.getenv("pwwd","")
 #Database Connection
 while True:
     try:
-        conn=psycopg2.connect(host='127.0.0.1',database='fastapi',user='postgres',password='Shadow_12',cursor_factory=RealDictCursor)
+        conn=psycopg2.connect(host='127.0.0.1',database=f'{dname}',user=f'{uname}',password=f'{pwwd}',cursor_factory=RealDictCursor)
         cursor=conn.cursor()
         print('Database connection successfull!')
         break
